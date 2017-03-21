@@ -25,7 +25,7 @@ gulp.task('sass', function () {
 gulp.task('nodemon', function(){
   nodemon({
     script: 'app.js',
-    ext: 'js ejs',
+    ext: 'js ejs json',
     env: {'NODE_ENV': 'development'}
   });
 });

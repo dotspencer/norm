@@ -1,14 +1,53 @@
 @import 'colors';
+$width: 600px;
 
-body{
+body {
   font-family: 'GTEestiDisplay-Medium',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
   background-color: $dark;
+  color: $light-text;
+  margin: 2em 0;
+}
+a {
+  text-decoration: none;
+  color: $light-text;
+  border-bottom: 2px solid transparentize($light-text, .75);
+  transition: 0.15s all;
+  &:hover {
+    border-bottom: 2px solid $light-text;
+  }
+}
+.content {
+  width: $width;
+  margin: 0 auto;
+}
+nav{
+  width: $width;
+  margin: 0 auto;
+  margin-left: calc(50% - #{$width / 2});
+  display: inline-block;
+  text-align: right;
+
+  .logo{
+    font-size: 1.6em;
+    float: left;
+  }
+  ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+  }
+  li{
+    float: left;
+    font-size: 1.1em;
+  }
+  a{
+    padding: 3px;
+    margin: 6px;
+  }
 }
 
-.content{
-  width: 600px;
-}
-
-.red{
+.red {
   color: indianred;
 }
