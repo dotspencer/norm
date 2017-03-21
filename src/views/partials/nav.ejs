@@ -1,7 +1,9 @@
 <nav>
   <div class="logo">Review Norm</div>
   <ul>
-    <li><a href="users/login">Log In</a></li>
-    <li><a href="users/login">Sign Up</a></li>
+    <% for (var i = 0; i < navData.length; i++) { %>
+      <% var d = navData[i];  %>
+      <li><a href="<%= d.link %>"><%= d.title %></a></li>
+    <% } %>
   </ul>
 </nav>
