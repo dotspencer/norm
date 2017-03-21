@@ -9,5 +9,10 @@
   },
   "scripts": {
     "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.1.0"
   }
 }
