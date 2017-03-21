@@ -17,5 +17,5 @@ var userRouter = require('./src/routes/userRoutes');
 app.use('/users', userRouter);
 
 app.get('/', (req, res) => {
-  res.render('homepage');
+  res.render('homepage', {req: req});
 });

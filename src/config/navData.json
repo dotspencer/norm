@@ -1,10 +1,10 @@
 [
   {
   "title": "Log In",
-  "link": "users/login"
+  "link": "/users/login"
   },
   {
   "title": "Sign Up",
-  "link": "users/login"
+  "link": "/users/signup"
   }
 ]
