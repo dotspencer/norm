@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var nodemon = require('gulp-nodemon');
+var concat = require('gulp-concat');
 
 var input = './public/scss/*.scss';
 var output = './public/css';
@@ -17,6 +18,7 @@ gulp.task('watch', function(){
 gulp.task('sass', function () {
   return gulp.src(input)
     .pipe(sass().on('error', sass.logError))
+    .pipe(concat('master.css'))
     .pipe(gulp.dest(output));
 });
 
