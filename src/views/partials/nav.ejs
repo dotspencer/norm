@@ -1,11 +1,7 @@
-<% var links = ["Send", "Login", "Sign Up", "Settings"]  %>
-
 <nav>
   <div class="logo">Review Norm</div>
   <ul>
-    <% for(var i = 0; i < links.length; i++){ %>
-      <% var l = links[i]; %>
-      <li><a href="<%= l.split(' ').join('').toLowerCase() %>"><%= l %></a></li>
-    <% } %>
+    <li><a href="users/login">Log In</a></li>
+    <li><a href="users/login">Sign Up</a></li>
   </ul>
 </nav>
