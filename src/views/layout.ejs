@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/master.css">
+    <title>Layout!</title>
+  </head>
+  <body>
+    <% include partials/nav %>
+    <%- body %>
+    <footer>
+      <script> </script><%# Bugfix for "CSS explode" bug %>
+      <%# https://bugs.chromium.org/p/chromium/issues/detail?id=332189 %>
+    </footer>
+  </body>
+</html>

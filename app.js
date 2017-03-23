@@ -1,12 +1,17 @@
 var express = require('express');
-var app = express();
-
+var expressLayouts = require('express-ejs-layouts');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 
+var app = express();
 app.listen('2323');
+
+app.use(expressLayouts);
 app.use(express.static('public'));
+app.use(cookieParser());
+app.use(session({secret: "bsmith"}));
+require('./src/config/passport.js')(app);
 
 app.set('views', 'src/views');
 app.set('view engine', 'ejs');
@@ -25,5 +30,5 @@ var authRouter = require('./src/routes/authRoutes');
 app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
-  res.render('homepage', {req: req});
+  res.render('home', {req: req});
 });
