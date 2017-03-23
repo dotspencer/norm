@@ -1,9 +1,11 @@
 <%
 var loginLink = '/login';
 var signupLink = '/signup';
+var usersLink = '/users';
 
 var loginClass = staticHelper.currentPage(loginLink, req);
 var signupClass = staticHelper.currentPage(signupLink, req);
+var usersClass = staticHelper.currentPage(usersLink, req);
 %>
 
 <nav>
@@ -11,5 +13,6 @@ var signupClass = staticHelper.currentPage(signupLink, req);
   <ul>
       <li><a href="<%= loginLink %>" class="<%= loginClass %>">Log In</a></li>
       <li><a href="<%= signupLink %>" class="<%= signupClass %>">Sign Up</a></li>
+      <li><a href="<%= usersLink %>" class="<%= usersClass %>">Show Users</a></li>
   </ul>
 </nav>

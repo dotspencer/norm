@@ -9,7 +9,7 @@ var router = function(app){
 
   app.get('/login', sessionController.login);
   app.get('/signup', userController.signup);
-
+  app.get('/users', userController.showAll);
 };
 
 module.exports = router;
