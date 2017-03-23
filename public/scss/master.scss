@@ -33,10 +33,7 @@ p {
     text-align: center;
   }
 }
-input[type='email'],
-input[type='password'],
-input[type='name'],
-input[type='text'] {
+input{
   display: block;
   padding: 10px 12px;
   margin: 12px 0 20px;
@@ -61,7 +58,7 @@ input[type='submit']{
   transition: background-color .2s;
 
   &:focus, &:hover{
-    background-color: darken($color, 4);
+    background-color: transparentize($color, .1);
     outline: none;
   }
 }
