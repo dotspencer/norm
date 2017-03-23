@@ -18,13 +18,19 @@ p, label, a {
   font-weight: 300;
   font-size: 1.06rem; }
 
+p {
+  margin: 1.5rem 0; }
+
 .content {
   width: 600px;
   margin: 0 auto; }
   .content h1 {
     text-align: center; }
 
-.content input {
+input[type='email'],
+input[type='password'],
+input[type='name'],
+input[type='text'] {
   display: block;
   padding: 10px 12px;
   margin: 12px 0 20px;
@@ -33,12 +39,27 @@ p, label, a {
   background-color: #d2d2d2;
   width: 100%;
   box-sizing: border-box; }
-  .content input:focus {
+  input[type='email']:focus,
+  input[type='password']:focus,
+  input[type='name']:focus,
+  input[type='text']:focus {
     outline: 2px solid indianred;
     outline-offset: 1px; }
 
+input[type='submit'] {
+  background-color: indianred;
+  color: #313146;
+  font-weight: 600;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color .2s; }
+  input[type='submit']:focus, input[type='submit']:hover {
+    background-color: #c84c4c;
+    outline: none; }
+
 form {
-  width: 52%;
+  width: 50%;
   margin: 0 auto; }
 
 nav {

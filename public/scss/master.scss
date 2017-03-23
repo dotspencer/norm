@@ -22,6 +22,9 @@ p, label, a {
   font-weight: 300;
   font-size: 1.06rem;
 }
+p {
+  margin: 1.5rem 0;
+}
 .content {
   width: $width;
   margin: 0 auto;
@@ -30,7 +33,10 @@ p, label, a {
     text-align: center;
   }
 }
-.content input {
+input[type='email'],
+input[type='password'],
+input[type='name'],
+input[type='text'] {
   display: block;
   padding: 10px 12px;
   margin: 12px 0 20px;
@@ -45,8 +51,22 @@ p, label, a {
     outline-offset: 1px;
   }
 }
+input[type='submit']{
+  background-color: $color;
+  color: $dark;
+  font-weight: 600;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color .2s;
+
+  &:focus, &:hover{
+    background-color: darken($color, 4);
+    outline: none;
+  }
+}
 form{
-  width: 52%;
+  width: 50%;
   margin: 0 auto;
 }
 nav{

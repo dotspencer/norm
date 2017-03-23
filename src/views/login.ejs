@@ -2,4 +2,13 @@
 
 <h1>Log In</h1>
 
+<form action="/auth/login" method="post">
+  <p>Need an account? <a href="/users/signup">Create an account</a></p>
+  <label for="email">Email</label>
+  <input name="email" type="email">
+  <label for="password">Password</label>
+  <input name="password" type="password">
+  <input type="submit" name="" value="Submit">
+</form>
+
 <% include partials/bottom  %>
