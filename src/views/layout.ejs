@@ -7,7 +7,9 @@
   </head>
   <body>
     <% include partials/nav %>
-    <%- body %>
+    <div class="content">
+      <%- body %>
+    </div>
     <footer>
       <script> </script><%# Bugfix for "CSS explode" bug %>
       <%# https://bugs.chromium.org/p/chromium/issues/detail?id=332189 %>

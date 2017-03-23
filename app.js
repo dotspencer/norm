@@ -17,6 +17,7 @@ app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
 // Menu data
+app.locals.staticHelper = require('./src/helpers/staticHelper.js');
 app.locals.navData = require('./src/config/navData.json');
 
 /*=======

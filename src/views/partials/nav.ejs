@@ -1,10 +1,15 @@
+<%
+var loginLink = '/users/login';
+var signupLink = '/users/signup';
+
+var loginClass = staticHelper.currentPage(loginLink, req);
+var signupClass = staticHelper.currentPage(signupLink, req);
+%>
+
 <nav>
   <div class="logo"><a href="/">Review <span class="color">Norm</span></a></div>
   <ul>
-    <% for (var i = 0; i < navData.length; i++) { %>
-      <% var d = navData[i];  %>
-      <% var status = d.link == req._parsedOriginalUrl.pathname ? "current" : "" %>
-      <li><a href="<%= d.link %>" class="<%= status %>" ><%= d.title %></a></li>
-    <% } %>
+      <li><a href="<%= loginLink %>" class="<%= loginClass %>">Log In</a></li>
+      <li><a href="<%= signupLink %>" class="<%= signupClass %>">Sign Up</a></li>
   </ul>
 </nav>
