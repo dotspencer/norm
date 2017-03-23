@@ -9,26 +9,51 @@ a {
   text-decoration: none;
   color: #d2d2d2;
   border-bottom: 2px solid rgba(210, 210, 210, 0.2);
-  transition: 0.15s all; }
+  transition: 0.15s all;
+  padding: .1rem 0; }
   a:hover, a.current {
     border-bottom: 2px solid #d2d2d2; }
+
+p, label, a {
+  font-weight: 300;
+  font-size: 1.06rem; }
 
 .content {
   width: 600px;
   margin: 0 auto; }
+  .content h1 {
+    text-align: center; }
+
+.content input {
+  display: block;
+  padding: 10px 12px;
+  margin: 12px 0 20px;
+  border: none;
+  font-size: 1em;
+  background-color: #d2d2d2;
+  width: 100%;
+  box-sizing: border-box; }
+  .content input:focus {
+    outline: 2px solid indianred;
+    outline-offset: 1px; }
+
+form {
+  width: 52%;
+  margin: 0 auto; }
 
 nav {
   width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   margin-left: calc(50% - 300px);
   display: inline-block;
   text-align: right; }
   nav .logo a {
-    font-size: 1.6em;
+    font-size: 1.7rem;
     float: left;
     border: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    font-weight: 300; }
   nav ul {
     list-style-type: none;
     padding: 0;
@@ -43,4 +68,7 @@ nav {
     margin: 6px; }
 
 .red {
+  color: indianred; }
+
+.color {
   color: indianred; }

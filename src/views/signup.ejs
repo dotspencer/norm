@@ -1,5 +1,13 @@
 <% include partials/top  %>
 
-<h1>This is the signup page</h1>
+<h1>Sign Up</h1>
+
+<form action="/auth/signup" method="post">
+  <label for="email">Email</label>
+  <input name="email" type="email">
+  <label for="password">Password</label>
+  <input name="password" type="password">
+  <p>Already have an account? <a href="/users/login">Log in here</a></p>
+</form>
 
 <% include partials/bottom  %>
