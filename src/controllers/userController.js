@@ -1,18 +1,30 @@
-var signup = function(req, res){
+/**
+ * Renders the signup page
+ */
+function signup(req, res){
+  res.render('signup', {req: req});
+};
+
+/**
+ * Attempts to create a new user and
+ * save it into the database
+ */
+function create(req, res){
   var vars = {
     req: req
-  }
+  };
   res.render('signup', vars);
 };
 
-var showAll = function(req, res){
+function showAll(req, res){
   var vars = {
     req: req
-  }
+  };
   res.render('all_users', vars);
 };
 
 module.exports = {
   signup: signup,
+  create: create,
   showAll: showAll
 };
