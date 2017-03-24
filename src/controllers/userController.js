@@ -21,9 +21,16 @@ function create(req, res){
   var hash = bcrypt.hashSync(req.body.password, 11);
   var message = "";
 
+  // Prevent empty strings from being submitted
+  email = email.length == 0 ? null : email;
+  name = name.length == 0 ? null : name;
+
   db.query(sql, [email, name, hash], function(err, results, fields){
-    console.log(req);
-    res.render('signup', {req: req});
+    if(err){
+      res.render('signup', {req: req, err: err});
+      return;
+    }
+    res.render('home', {req: req});
   });
 };
 

@@ -82,6 +82,11 @@ nav {
     padding: 6px 3px;
     margin: 6px; }
 
+.error {
+  background-color: indianred;
+  color: #333;
+  padding: 8px 10px; }
+
 .red {
   color: indianred; }
 
