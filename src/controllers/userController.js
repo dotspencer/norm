@@ -24,6 +24,7 @@ function create(req, res){
   // Prevent empty strings from being submitted
   email = email.length == 0 ? null : email;
   name = name.length == 0 ? null : name;
+  hash = req.body.password == 0 ? null : hash;
 
   db.query(sql, [email, name, hash], function(err, results, fields){
     if(err){
