@@ -22,9 +22,7 @@ function create(req, res){
   var message = "";
 
   db.query(sql, [email, name, hash], function(err, results, fields){
-    if(err){
-      console.log(err.message);
-    }
+    console.log(req);
     res.render('signup', {req: req});
   });
 };

@@ -1,5 +1,5 @@
 function currentPage(href, req){
-  return href == req._parsedOriginalUrl.pathname ? "current" : "";
+  return href == req.originalUrl ? "current" : "";
 }
 
 function parseError(err){
