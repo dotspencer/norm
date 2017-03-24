@@ -1,10 +1,15 @@
 <h1>Sign Up</h1>
 
-<form action="/auth/signup" method="post">
+<form action="/signup" method="post">
+  <label for="name">Name</label>
+  <input name="name" type="text">
+
   <label for="email">Email</label>
   <input name="email" type="email">
+
   <label for="password">Password</label>
   <input name="password" type="password">
+
   <input type="submit" name="" value="Submit">
   <p>Already have an account? <a href="/login">Log in</a></p>
 </form>

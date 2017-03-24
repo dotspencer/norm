@@ -13,7 +13,9 @@ function create(req, res){
   var vars = {
     req: req
   };
-  res.render('signup', vars);
+  //res.send(JSON.stringify(req));
+  console.log(req.body);
+  //res.render('signup', vars);
 };
 
 function showAll(req, res){
