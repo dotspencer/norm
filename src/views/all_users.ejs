@@ -1,1 +1,23 @@
 <h1>All users here...</h1>
+
+<% for (var i = 0; i < rows.length; i++) { %>
+
+<div class="entry">
+  <div class="name"><%= rows[i].name %></div>
+  <div class="email"><%= rows[i].email %></div>
+</div>
+
+<% } %>
+
+<style>
+.entry {
+  padding: 6px;
+  background-color: #d2d2d2;
+  color: #333;
+  margin: 6px 0;
+  font-weight: 200;
+}
+.name{
+  font-weight: bold;
+}
+</style>

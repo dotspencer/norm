@@ -4,9 +4,9 @@ mysql> describe user;
 +----------+-----------------------+------+-----+---------+----------------+
 | id       | mediumint(8) unsigned | NO   | PRI | NULL    | auto_increment |
 | email    | varchar(120)          | NO   | UNI | NULL    |                |
+| name     | varchar(60)           | NO   |     | NULL    |                |
 | hash     | varchar(60)           | NO   |     | NULL    |                |
 | verified | tinyint(1)            | NO   |     | 0       |                |
 | admin    | tinyint(1)            | NO   |     | 0       |                |
-| name     | varchar(60)           | NO   |     | NULL    |                |
 +----------+-----------------------+------+-----+---------+----------------+
 6 rows in set (0.01 sec)

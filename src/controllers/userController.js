@@ -19,10 +19,18 @@ function create(req, res){
 };
 
 function showAll(req, res){
-  var vars = {
-    req: req
-  };
-  res.render('all_users', vars);
+  var db = req.app.locals.db;
+  db.query('SELECT * FROM user', function(err, rows){
+    if(err){
+      res.send(err.message);
+    }
+    var vars = {
+      req: req,
+      rows: rows
+    };
+    res.render('all_users', vars);
+  });
+
 };
 
 module.exports = {

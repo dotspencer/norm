@@ -14,13 +14,15 @@ app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
 // mysql
-var mysql = require('mysql')
-var connection = mysql.createConnection({
-  host     : '138.197.213.133',
-  user     : 'dbuser',
-  password : 's3kreee7',
-  database : 'my_db'
+var mysql = require('mysql');
+var keys = require('./src/config/keys.json');
+app.locals.db = mysql.createConnection({
+  host     : 'localhost',
+  user     : keys.mysql.username,
+  password : keys.mysql.password,
+  database : 'norm'
 });
+app.locals.db.connect();
 
 // Helpers
 app.locals.staticHelper = require('./src/helpers/staticHelper.js');

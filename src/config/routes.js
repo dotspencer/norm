@@ -8,10 +8,8 @@ var router = function(app){
   });
 
   app.get('/login', sessionController.login);
-
   app.get('/signup', userController.signup);
   app.post('/signup', userController.create);
-
   app.get('/users', userController.showAll);
 };
 
