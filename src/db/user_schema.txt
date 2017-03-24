@@ -7,5 +7,6 @@ mysql> describe user;
 | hash     | varchar(60)           | NO   |     | NULL    |                |
 | verified | tinyint(1)            | NO   |     | 0       |                |
 | admin    | tinyint(1)            | NO   |     | 0       |                |
+| name     | varchar(60)           | NO   |     | NULL    |                |
 +----------+-----------------------+------+-----+---------+----------------+
-5 rows in set (0.00 sec)
+6 rows in set (0.01 sec)

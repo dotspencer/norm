@@ -13,6 +13,15 @@ app.use(express.static('public'));
 app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
+// mysql
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+  host     : '138.197.213.133',
+  user     : 'dbuser',
+  password : 's3kreee7',
+  database : 'my_db'
+});
+
 // Helpers
 app.locals.staticHelper = require('./src/helpers/staticHelper.js');
 
