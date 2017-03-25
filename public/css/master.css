@@ -82,10 +82,13 @@ nav {
     padding: 6px 3px;
     margin: 6px; }
 
-.error {
-  background-color: indianred;
-  color: #333;
-  padding: 8px 10px; }
+.flash {
+  padding: 8px 10px;
+  color: #313d46; }
+  .flash.error {
+    background-color: indianred; }
+  .flash.success {
+    background-color: mediumseagreen; }
 
 .red {
   color: indianred; }

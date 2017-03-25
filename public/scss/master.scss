@@ -97,10 +97,17 @@ nav{
     margin: 6px;
   }
 }
-.error{
-  background-color: $red;
-  color: #333;
+
+.flash{
   padding: 8px 10px;
+  color: $dark;
+
+  &.error{
+    background-color: $red;
+  }
+  &.success{
+    background-color: $green;
+  }
 }
 
 .red {

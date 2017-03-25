@@ -1,0 +1,12 @@
+<%
+var flashExists = typeof locals.flash != "undefined";
+
+if(!flashExists){
+  return;
+}
+
+var divClass = locals.flash.type;
+var divMessage = locals.flash.message;
+%>
+
+<div class="flash <%= divClass %>"><%= divMessage %></div>

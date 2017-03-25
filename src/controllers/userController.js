@@ -27,11 +27,24 @@ function create(req, res){
   hash = req.body.password == 0 ? null : hash;
 
   db.query(sql, [email, name, hash], function(err, results, fields){
+
+    // On error
     if(err){
-      res.render('signup', {req: req, err: err});
+      var flash = {
+        type: "error",
+        message: staticHelper.parseError(err)
+      };
+      res.render('signup', {req: req, flash: flash});
       return;
     }
-    res.render('home', {req: req});
+
+    // Registration successful
+    var flash = {
+      type: "success",
+      message: "Account " + email + " created successfully. Log in below."
+    };
+    res.render('login', {req: req, flash: flash});
+
   });
 };
 

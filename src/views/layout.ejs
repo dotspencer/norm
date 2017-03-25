@@ -8,11 +8,7 @@
   <body>
     <% include partials/nav %>
     <div class="content">
-      <% if(locals.err){ %>
-        <div class="error">
-        <%= staticHelper.parseError(err) %>
-        </div>
-      <% } %>
+      <% include partials/flash %>
       <%- body %>
     </div>
     <footer>
