@@ -3,6 +3,9 @@ $dark-green: #313d46;
 $dark: $dark-green;
 
 $light-text: #d2d2d2;
+$dark-text: $dark;
+
+$transparent-light: transparentize($light-text, .92);
 
 $red: indianred;
 $green: mediumseagreen;

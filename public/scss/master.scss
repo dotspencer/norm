@@ -39,7 +39,8 @@ input{
   margin: 12px 0 20px;
   border: none;
   font-size: 1em;
-  background-color: $light-text;
+  background-color: $transparent-light;
+  color: $light-text;
   width: 100%;
   box-sizing: border-box;
 
@@ -65,6 +66,8 @@ input[type='submit']{
 form{
   width: 50%;
   margin: 0 auto;
+  background-color: $transparent-light;
+  padding: 30px;
 }
 nav{
   width: $width;
