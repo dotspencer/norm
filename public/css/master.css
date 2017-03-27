@@ -92,11 +92,11 @@ nav {
     background-color: indianred; }
   .flash.success {
     background-color: mediumseagreen; }
-  .flash.notice {
+  .flash.info {
     background-color: steelblue;
     color: #d2d2d2;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.3); }
-    .flash.notice::before {
+    .flash.info::before {
       content: 'i';
       display: inline-block;
       background-color: #d2d2d2;

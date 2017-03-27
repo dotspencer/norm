@@ -40,7 +40,7 @@ function signup(req, res){
 
     // Registration successful
     var flash = {
-      type: "notice",
+      type: "info",
       message: "Check your email to verify your account."
     };
     res.render('login', {req: req, flash: flash});

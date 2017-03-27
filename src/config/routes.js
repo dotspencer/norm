@@ -15,6 +15,10 @@ var router = function(app){
 
   app.get('/users', userController.showAll);
   app.get('/users/verify', userController.verify);
+
+  app.get('/test', function(req, res){
+    res.render('test', {req: req});
+  });
 };
 
 module.exports = router;
