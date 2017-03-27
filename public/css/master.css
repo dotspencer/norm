@@ -38,7 +38,7 @@ input {
   width: 100%;
   box-sizing: border-box; }
   input:focus {
-    outline: 2px solid mediumseagreen;
+    outline: 2px solid steelblue;
     outline-offset: 1px; }
 
 input[type='submit'] {
