@@ -92,6 +92,21 @@ nav {
     background-color: indianred; }
   .flash.success {
     background-color: mediumseagreen; }
+  .flash.notice {
+    background-color: steelblue;
+    color: #d2d2d2;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3); }
+    .flash.notice::before {
+      content: 'i';
+      display: inline-block;
+      background-color: #d2d2d2;
+      text-align: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      color: steelblue;
+      margin-right: 14px;
+      text-shadow: none; }
 
 .red {
   color: indianred; }

@@ -111,6 +111,25 @@ nav{
   &.success{
     background-color: $green;
   }
+
+  &.notice{
+    background-color: $blue;
+    color: $light-text;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      content: 'i';
+      display: inline-block;
+      background-color: $light-text;
+      text-align: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      color: $blue;
+      margin-right: 14px;
+      text-shadow: none;
+    }
+  }
 }
 
 .red {
