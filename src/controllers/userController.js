@@ -48,12 +48,16 @@ function create(req, res){
   });
 };
 
+function verify(req, res){
+  res.send('Verify users from this page.');
+}
+
 /**
  * Shows all users in database
  */
 function showAll(req, res){
   var db = req.app.locals.db;
-  db.query('SELECT * FROM user', function(err, rows){
+  db.query('SELECT * FROM user;', function(err, rows){
     if(err){
       res.send(err.message);
       return;
@@ -64,11 +68,11 @@ function showAll(req, res){
     };
     res.render('all_users', vars);
   });
-
 };
 
 module.exports = {
   signup: signup,
   create: create,
+  verify: verify,
   showAll: showAll
 };
