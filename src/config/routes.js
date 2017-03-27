@@ -1,5 +1,5 @@
 var userController = require('../controllers/userController');
-var sessionController = require('../controllers/sessionController');
+var authController = require('../controllers/authController');
 
 var router = function(app){
 
@@ -7,7 +7,7 @@ var router = function(app){
     res.render('home', {req: req});
   });
 
-  app.get('/login', sessionController.login);
+  app.get('/login', authController.login);
   app.get('/signup', userController.signup);
   app.post('/signup', userController.create);
   app.get('/users', userController.showAll);
