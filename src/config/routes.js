@@ -7,9 +7,12 @@ var router = function(app){
     res.render('home', {req: req});
   });
 
-  app.get('/login', authController.login);
-  app.get('/signup', userController.signup);
-  app.post('/signup', userController.create);
+  app.get('/login', authController.showPage);
+  app.post('/login', authController.login);
+
+  app.get('/signup', userController.showPage);
+  app.post('/signup', userController.signup);
+
   app.get('/users', userController.showAll);
   app.get('/users/verify', userController.verify);
 };

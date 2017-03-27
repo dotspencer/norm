@@ -4,14 +4,14 @@ var staticHelper = require('../helpers/staticHelper');
 /**
  * Renders the signup page
  */
-function signup(req, res){
+function showPage(req, res){
   res.render('signup', {req: req});
 };
 
 /**
  * Attempts to create a new user and save it into the database
  */
-function create(req, res){
+function signup(req, res){
   var db = req.app.locals.db;
 
   var sql = 'INSERT INTO user (email, name, hash) VALUES (?, ?, ?);';
@@ -71,8 +71,8 @@ function showAll(req, res){
 };
 
 module.exports = {
+  showPage: showPage,
   signup: signup,
-  create: create,
   verify: verify,
   showAll: showAll
 };
