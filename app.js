@@ -9,6 +9,9 @@ var router = require('./src/config/routes.js');
 var app = express();
 app.listen('2323');
 
+// Security
+app.disable('x-powered-by');
+
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({secret: keys.secret, resave: false, saveUninitialized: true}));
