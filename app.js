@@ -14,10 +14,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({secret: keys.secret, resave: false, saveUninitialized: true}));
 app.use(express.static('public'));
 
+// Custom middleware
+app.use(function(req, res, next){
+  console.log("Custom middleware :)");
+  next();
+});
+
 app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
-// mysql
+// Database
 var mysql = require('mysql');
 app.locals.db = mysql.createConnection({
   host     : 'localhost',

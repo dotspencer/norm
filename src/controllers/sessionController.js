@@ -32,6 +32,8 @@ function login(req, res){
 
     if(match){
       // TODO login user here
+      //   Possibly redirect to homepage and add param successful_login to url
+      //   to show flash that they logged in successfully
       renderSuccess(req, res, 'login', "Correct password. Good job!");
     } else {
       renderError(req, res, 'login', "Incorrect password. Try again.");
