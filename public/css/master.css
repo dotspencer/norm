@@ -1,4 +1,5 @@
 
+@charset "UTF-8";
 body {
   font-family: 'GTEestiDisplay-Medium',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
   background-color: #313d46;
@@ -87,26 +88,36 @@ nav {
 
 .flash {
   padding: 8px 10px;
-  color: #313d46; }
+  color: #d2d2d2;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.4); }
   .flash.error {
     background-color: indianred; }
+    .flash.error::before {
+      content: '!';
+      color: indianred; }
   .flash.success {
-    background-color: mediumseagreen; }
+    background-color: mediumseagreen;
+    color: #313d46;
+    text-shadow: none; }
+    .flash.success::before {
+      content: '✓';
+      color: mediumseagreen;
+      background-color: #313d46; }
   .flash.info {
-    background-color: steelblue;
-    color: #d2d2d2;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3); }
+    background-color: steelblue; }
     .flash.info::before {
       content: 'i';
-      display: inline-block;
-      background-color: #d2d2d2;
-      text-align: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      color: steelblue;
-      margin-right: 14px;
-      text-shadow: none; }
+      color: steelblue; }
+  .flash::before {
+    display: inline-block;
+    background-color: #d2d2d2;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: steelblue;
+    margin-right: 14px;
+    text-shadow: none; }
 
 .red {
   color: indianred; }

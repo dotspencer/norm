@@ -103,32 +103,49 @@ nav{
 
 .flash{
   padding: 8px 10px;
-  color: $dark;
+  color: $light-text;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
 
   &.error{
+    $bg: $red;
     background-color: $red;
+    &::before{
+      content: '!';
+      color: $bg;
+    }
   }
+
   &.success{
-    background-color: $green;
+    $bg: $green;
+    background-color: $bg;
+    color: $dark;
+    text-shadow: none;
+    &::before{
+      content: '✓';
+      color: $bg;
+      background-color: $dark;
+    }
   }
 
   &.info{
-    background-color: $blue;
-    color: $light-text;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-
-    &::before {
+    $bg: $blue;
+    background-color: $bg;
+    &::before{
       content: 'i';
-      display: inline-block;
-      background-color: $light-text;
-      text-align: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      color: $blue;
-      margin-right: 14px;
-      text-shadow: none;
+      color: $bg;
     }
+  }
+
+  &::before {
+    display: inline-block;
+    background-color: $light-text;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: $blue;
+    margin-right: 14px;
+    text-shadow: none;
   }
 }
 
