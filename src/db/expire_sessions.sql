@@ -4,9 +4,8 @@ WHERE sid NOT IN (
   FROM (
     SELECT sid
     FROM Session
-    WHERE sid = ?
+    WHERE user_id = ?
     ORDER BY created_on DESC
     LIMIT 4
-
   ) t
-);
+) AND user_id = ?;

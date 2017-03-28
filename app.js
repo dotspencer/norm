@@ -14,11 +14,22 @@ app.disable('x-powered-by');
 
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({secret: keys.secret, resave: false, saveUninitialized: true}));
 app.use(express.static('public'));
+
+var sessionOptions = {
+  secret: keys.secret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 1209600000
+  }
+}
+app.use(session(sessionOptions));
 
 // Custom middleware
 app.use(function(req, res, next){
+  // TODO: Lookup session id to authenticate user
+  // TODO: Set logged in variable
   console.log("Custom middleware :)");
   next();
 });
