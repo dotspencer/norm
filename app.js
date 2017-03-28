@@ -11,7 +11,7 @@ app.listen('2323');
 
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({secret: keys.secret, resave: false, saveUninitialized: false}));
+app.use(session({secret: keys.secret, resave: false, saveUninitialized: true}));
 app.use(express.static('public'));
 
 app.set('views', 'src/views');
