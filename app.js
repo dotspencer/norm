@@ -5,6 +5,7 @@ var session = require('express-session');
 
 var keys = require('./src/config/keys.json');
 var router = require('./src/config/routes.js');
+var authMiddleware = require('./src/middleware/authMiddleware.js')
 
 var app = express();
 app.listen('2323');
@@ -18,21 +19,13 @@ app.use(express.static('public'));
 
 var sessionOptions = {
   secret: keys.secret,
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   cookie: {
     maxAge: 1209600000
   }
 }
 app.use(session(sessionOptions));
-
-// Custom middleware
-app.use(function(req, res, next){
-  // TODO: Lookup session id to authenticate user
-  // TODO: Set logged in variable
-  console.log("Custom middleware :)");
-  next();
-});
 
 app.set('views', 'src/views');
 app.set('view engine', 'ejs');
@@ -46,6 +39,9 @@ app.locals.db = mysql.createConnection({
   database : 'norm'
 });
 app.locals.db.connect();
+
+// Custom middleware
+app.use(authMiddleware);
 
 // Helpers
 app.locals.staticHelper = require('./src/helpers/staticHelper.js');
