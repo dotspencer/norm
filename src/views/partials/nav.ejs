@@ -2,17 +2,29 @@
 var loginLink = '/login';
 var signupLink = '/signup';
 var usersLink = '/users';
+var signoutLink = '/signout';
 
 var loginClass = staticHelper.currentPage(loginLink, req);
 var signupClass = staticHelper.currentPage(signupLink, req);
 var usersClass = staticHelper.currentPage(usersLink, req);
+
+var loggedIn = req.session.userID != null;
 %>
+
+
 
 <nav>
   <div class="logo"><a href="/">Review <span class="color">Norm</span></a></div>
+  <% if(!loggedIn) { %>
   <ul>
       <li><a href="<%= loginLink %>" class="<%= loginClass %>">Log In</a></li>
       <li><a href="<%= signupLink %>" class="<%= signupClass %>">Sign Up</a></li>
-      <li><a href="<%= usersLink %>" class="<%= usersClass %>">Show Users</a></li>
   </ul>
+  <% } else { %>
+    <!-- Logged In -->
+    <ul>
+        <li><a href="<%= signoutLink %>">Sign Out</a></li>
+        <li><a href="<%= usersLink %>" class="<%= usersClass %>">Show Users</a></li>
+    </ul>
+  <% } %>
 </nav>

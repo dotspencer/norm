@@ -5,6 +5,11 @@ function showPage(req, res) {
   res.render('login', { req: req });
 };
 
+function signout(req, res){
+  req.session.destroy();
+  res.redirect('/');
+}
+
 function login(req, res){
   var db = req.app.locals.db;
 
@@ -41,7 +46,7 @@ function createSession(req, res, user){
     //   Possibly redirect to homepage and add param successful_login to url
     //   to show flash that they logged in successfully
     req.session.userID = user.id;
-    renderSuccess(req, res, 'login', "Correct password. Good job!");
+    res.redirect('/');
   } else {
     renderError(req, res, 'login', "Incorrect password. Try again.");
   }
@@ -69,5 +74,6 @@ function renderSuccess(req, res, view, message){
 
 module.exports = {
   showPage: showPage,
-  login: login
+  login: login,
+  signout: signout
 };

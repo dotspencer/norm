@@ -9,6 +9,7 @@ var router = function(app){
 
   app.get('/login', sessionController.showPage);
   app.post('/login', sessionController.login);
+  app.get('/signout', sessionController.signout);
 
   app.get('/signup', userController.showPage);
   app.post('/signup', userController.signup);
