@@ -18,7 +18,18 @@ function signout(req, res){
 function login(req, res){
   var db = req.app.locals.db;
 
-  getUserByEmail(req, res, db, req.body.email, createSession);
+  var formEmail = req.body.email;
+  var formPassword = req.body.password;
+
+  // Sets email and password to null if invalid
+  formEmail = (formEmail == null | formEmail.length == 0) ? null : formEmail;
+  formPassword = (formPassword == null | formPassword.length == 0) ? null : formPassword;
+  if(formEmail == null | formPassword == null){
+    renderError(req, res, 'login', "Required field(s) cannot be empty.");
+    return;
+  }
+
+  getUserByEmail(req, res, db, formEmail, createSession);
 }
 
 function getUserByEmail(req, res, db, email, next) {
