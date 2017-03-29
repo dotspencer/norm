@@ -1,0 +1,9 @@
+mysql> describe Session;
++------------+-----------------------+------+-----+-------------------+-------+
+| Field      | Type                  | Null | Key | Default           | Extra |
++------------+-----------------------+------+-----+-------------------+-------+
+| sid        | varchar(80)           | NO   | PRI | NULL              |       |
+| user_id    | mediumint(8) unsigned | NO   | MUL | NULL              |       |
+| created_on | timestamp             | NO   |     | CURRENT_TIMESTAMP |       |
++------------+-----------------------+------+-----+-------------------+-------+
+3 rows in set (0.04 sec)
