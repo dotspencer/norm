@@ -28,27 +28,29 @@ app.locals.db = mysql.createConnection({
 });
 app.locals.db.connect();
 
-// Sessions
-var sessionOptions = {
-  secret: keys.secret,
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    maxAge: 1209600000
-  }
-}
-app.use(session(sessionOptions));
-
 // Session Store
 var options = {
     host: 'localhost',
     port: 3306,
     user: keys.mysql.username,
     password: keys.mysql.password,
-    database: 'norm'
+    database: 'norm',
+    createDatabaseTable: true
 };
 var connection = mysql.createConnection(options); // or mysql.createPool(options);
 var sessionStore = new MySQLStore({}/* session store options */, connection);
+
+// Sessions
+var sessionOptions = {
+  secret: keys.secret,
+  resave: false,
+  saveUninitialized: true,
+  store: sessionStore,
+  cookie: {
+    //maxAge: 1209600000 // NOTE: uncomment to make all sessions persistant
+  }
+}
+app.use(session(sessionOptions));
 
 // Authentication
 app.use(authMiddleware);
