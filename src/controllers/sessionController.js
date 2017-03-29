@@ -1,7 +1,12 @@
 var bcrypt = require('bcrypt');
 var sessionHelper = require('../helpers/sessionHelper.js');
+var loggedIn = require('../helpers/loggedIn.js');
 
 function showPage(req, res) {
+  if(loggedIn(req)){
+    res.redirect('/');
+    return;
+  }
   res.render('login', { req: req });
 };
 

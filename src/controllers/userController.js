@@ -1,10 +1,14 @@
 var bcrypt = require('bcrypt');
 var staticHelper = require('../helpers/staticHelper');
+var loggedIn = require('../helpers/loggedIn.js');
 
 /**
  * Renders the signup page
  */
 function showPage(req, res){
+  // Log user out if they are trying to signup again
+  req.session.destroy();
+
   res.render('signup', {req: req});
 };
 
@@ -56,6 +60,12 @@ function verify(req, res){
  * Shows all users in database
  */
 function showAll(req, res){
+  if(!loggedIn(req)){
+    res.set('Content-Type', 'application/json');
+    res.status(401).send("Unauthorized");
+    return;
+  }
+
   var db = req.app.locals.db;
   db.query('SELECT * FROM user;', function(err, rows){
     if(err){

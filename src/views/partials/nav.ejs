@@ -8,7 +8,7 @@ var loginClass = staticHelper.currentPage(loginLink, req);
 var signupClass = staticHelper.currentPage(signupLink, req);
 var usersClass = staticHelper.currentPage(usersLink, req);
 
-var loggedIn = req.session.userID != null;
+var loggedIn = req.session != null && req.session.userID != null;
 %>
 
 
