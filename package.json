@@ -10,7 +10,8 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "express-ejs-layouts": "^2.2.0",
-    "express-session": "^1.15.1",
+    "express-mysql-session": "^1.2.0",
+    "express-session": "^1.15.2",
     "mysql": "^2.13.0",
     "nodemailer": "^3.1.8"
   },
