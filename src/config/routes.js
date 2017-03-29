@@ -1,11 +1,10 @@
 var userController = require('../controllers/userController');
 var sessionController = require('../controllers/sessionController');
+var mainController = require('../controllers/mainController');
 
 var router = function(app){
 
-  app.get('/', (req, res) => {
-    res.render('home', {req: req});
-  });
+  app.get('/', mainController.showPage);
 
   app.get('/login', sessionController.showPage);
   app.post('/login', sessionController.login);
