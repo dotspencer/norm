@@ -44,7 +44,7 @@ var sessionStore = new MySQLStore({}/* session store options */, connection);
 var sessionOptions = {
   secret: keys.secret,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false, // https://github.com/expressjs/session#saveuninitialized
   store: sessionStore,
   cookie: {
     //maxAge: 1209600000 // NOTE: uncomment to make all sessions persistant
