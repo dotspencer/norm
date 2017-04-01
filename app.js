@@ -6,7 +6,6 @@ var MySQLStore = require('express-mysql-session')(session);
 
 var keys = require('./src/config/keys.json');
 var router = require('./src/config/routes.js');
-var authMiddleware = require('./src/middleware/authMiddleware.js');
 
 var app = express();
 app.listen('2323');
