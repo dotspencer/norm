@@ -11,7 +11,7 @@ var output = './public/css';
 gulp.task('default', ['sass_main', 'sass_dash', 'watch', 'nodemon']);
 
 gulp.task('watch', function(){
-  return gulp.watch(generalInput, ['sass_main', 'sass_dash'])
+  return gulp.watch([generalInput, mainInput, dashInput], ['sass_main', 'sass_dash'])
     .on('change', function(event){
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
@@ -20,7 +20,7 @@ gulp.task('watch', function(){
 gulp.task('sass_main', function () {
   return gulp.src(mainInput)
     .pipe(sass().on('error', sass.logError))
-    .pipe(concat('master.css'))
+    .pipe(concat('main.css'))
     .pipe(gulp.dest(output));
 });
 
