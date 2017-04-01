@@ -2,6 +2,9 @@ var bcrypt = require('bcrypt');
 var sessionHelper = require('../helpers/sessionHelper.js');
 var loggedIn = require('../helpers/loggedIn.js');
 
+/*
+  Show the login page
+*/
 function showPage(req, res) {
   if(loggedIn(req)){
     res.redirect('/');
@@ -10,11 +13,18 @@ function showPage(req, res) {
   res.render('login', { req: req });
 };
 
+/*
+  Signs the user out by destroying the session
+ */
 function signout(req, res){
   req.session.destroy();
   res.redirect('/');
 }
 
+/*
+  Logs user in or shows error
+  Called by POST request to /login
+*/
 function login(req, res){
   var db = req.app.locals.db;
 
@@ -32,6 +42,9 @@ function login(req, res){
   getUserByEmail(req, res, db, formEmail, createSession);
 }
 
+/*
+  Queries the database for a user by email
+*/
 function getUserByEmail(req, res, db, email, next) {
   // Lookup user email
   var sql = "SELECT * FROM User WHERE email = ?";
@@ -52,6 +65,10 @@ function getUserByEmail(req, res, db, email, next) {
   });
 }
 
+/*
+  Actually creates the session that is stored by the
+  session store and in the browser session cookie
+*/
 function createSession(req, res, user){
   // Email found, hash it, match it
   var formEmail = req.body.email;
@@ -59,10 +76,8 @@ function createSession(req, res, user){
   var match = bcrypt.compareSync(formPassword, user.hash);
 
   if(match){
-    //   Possibly redirect to homepage and add param successful_login to url
-    //   to show flash that they logged in successfully
     req.session.userID = user.id;
-    res.redirect('/');
+    res.redirect('/dashboard');
   } else {
     renderError(req, res, 'login', "Incorrect password. Try again.");
   }

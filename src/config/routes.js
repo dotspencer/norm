@@ -1,10 +1,19 @@
 var userController = require('../controllers/userController');
 var sessionController = require('../controllers/sessionController');
-var mainController = require('../controllers/mainController');
+var dashboardController = require('../controllers/dashboardController');
+var loggedIn = require('../helpers/loggedIn.js');
 
 var router = function(app){
 
-  app.get('/', mainController.showPage);
+  app.get('/', (req, res) => {
+    // Logged in users go to the dashboard
+    if(loggedIn(req)){
+      res.redirect('/dashboard');
+      return;
+    }
+    // Other users can see the homepage
+    res.render('home', {req: req});
+  });
 
   app.get('/login', sessionController.showPage);
   app.post('/login', sessionController.login);
@@ -19,6 +28,11 @@ var router = function(app){
   app.get('/test', function(req, res){
     res.render('test', {req: req});
   });
+
+  // Dashboard
+
+  app.get('/dashboard', dashboardController.showDashboard);
+
 };
 
 module.exports = router;

@@ -52,9 +52,6 @@ var sessionOptions = {
 }
 app.use(session(sessionOptions));
 
-// Authentication
-app.use(authMiddleware);
-
 // Helpers
 app.locals.staticHelper = require('./src/helpers/staticHelper.js');
 
