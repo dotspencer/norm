@@ -11,3 +11,11 @@ $red: indianred;
 $green: mediumseagreen;
 $color: $green;
 $blue: steelblue;
+
+
+.red {
+  color: indianred;
+}
+.color{
+  color: $color;
+}
