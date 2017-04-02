@@ -1,3 +1,14 @@
+<%
+var messageLink = '/dashboard';
+var logsLink = '/dashboard/logs';
+
+var messageClass = staticHelper.currentPage(messageLink, req);
+var logsClass = staticHelper.currentPage(logsLink, req);
+
+// TODO: Convert into isAdmin
+// var loggedIn = req.session != null && req.session.userID != null;
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,12 +21,17 @@
       <a href="/dashboard">
         <div class="logo">Review <span class="color">Norm</span></div>
       </a>
-      <% console.log(req.session) %>
-      <div class="right">right side</div>
+      <div class="name"><%= req.session.userName %></div>
     </header>
     <div class="side">
-      <div class="group">
-
+      <div class="link">
+        <img class="icon" src="/images/message.png" alt="">
+        <div class="text">Message</div>
+      </div>
+      <div class="link">
+        <img class="icon" src="/images/list.png" alt="">
+        <div class="text">Logs</div>
+      </div>
       </div>
       <div class="admin group">
 

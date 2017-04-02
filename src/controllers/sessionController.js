@@ -77,6 +77,7 @@ function createSession(req, res, user){
 
   if(match){
     req.session.userID = user.id;
+    req.session.userName = user.name;
     res.redirect('/dashboard');
   } else {
     renderError(req, res, 'login', "Incorrect password. Try again.");

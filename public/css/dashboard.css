@@ -33,7 +33,10 @@ p, label, a {
 p {
   margin: 1.5rem 0; }
 
-div {
+body {
+  background-color: #3f474c; }
+
+div, header {
   box-sizing: border-box; }
 
 html {
@@ -52,17 +55,42 @@ header {
     font-weight: 300; }
     header .logo a {
       font-size: initial; }
-  header .right {
+  header .name {
     float: right;
     font-weight: 100;
     padding: 0 20px;
-    border-left: 1px solid rgba(0, 0, 0, 0.3); }
+    border-left: 1px solid rgba(0, 0, 0, 0.6);
+    min-width: 50px;
+    cursor: pointer; }
 
 div.side {
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 20px;
   float: left;
-  min-height: calc(100vh - 50px); }
+  height: calc(100vh - 60px);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  width: 100px; }
+  div.side a {
+    border: none;
+    width: 100%;
+    display: block; }
+  div.side .link {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+    div.side .link.current {
+      background-color: rgba(0, 0, 0, 0.22); }
+  div.side .text {
+    font-size: 1.1rem;
+    font-weight: 100;
+    margin: 5px 0; }
+  div.side .icon {
+    width: 30px;
+    vertical-align: middle;
+    opacity: .8; }
 
 div.content {
-  float: left; }
+  float: left;
+  width: calc(100% - 100px);
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  padding: 30px; }
