@@ -26,7 +26,7 @@ var settingsClass = staticHelper.currentPage(settingsLink, req);
       <div class="name"><%= req.session.userName %></div>
     </header>
     <div class="expand-menu">
-      <a href="/signout">Sign Out</a>
+      <a href="/signout">Logout</a>
     </div>
     <div class="side">
       <a href="<%= messageLink %>" class="<%= messageClass %>">
@@ -47,7 +47,9 @@ var settingsClass = staticHelper.currentPage(settingsLink, req);
       </div>
     </div>
     <div class="content">
-      <%-body%>
+      <div class="center">
+        <%-body%>
+      </div>
     </div>
   </body>
 </html>

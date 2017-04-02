@@ -34,8 +34,8 @@ p {
   margin: 1.5rem 0; }
 
 body {
-  background-color: white;
-  color: #333; }
+  background-color: whitesmoke;
+  color: #191f23; }
 
 div, header {
   box-sizing: border-box; }
@@ -43,9 +43,11 @@ div, header {
 html {
   overflow: hidden; }
 
+h1, h2, h3 {
+  font-weight: 300; }
+
 header {
-  background-color: #273138;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #191f23;
   float: left;
   width: 100%;
   line-height: 60px; }
@@ -67,20 +69,22 @@ header {
 
 div.expand-menu {
   position: fixed;
-  top: 61px;
-  right: 0;
-  background-color: #404B54; }
+  top: 60px;
+  right: 5px;
+  background-color: #e6e6e6;
+  border: 1px solid lightgray;
+  z-index: 20; }
   div.expand-menu a {
-    color: #d2d2d2;
+    color: #333;
     border: none;
     display: block;
     padding: 10px 30px; }
 
 div.side {
   background-color: #404B54;
-  float: left;
-  height: calc(100vh - 60px);
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 60px;
+  bottom: 0;
   width: 110px; }
   div.side a {
     width: 100%;
@@ -101,8 +105,13 @@ div.side {
     opacity: .8; }
 
 div.content {
-  float: left;
-  width: calc(100% - 110px);
-  height: calc(100vh - 60px);
   overflow-y: scroll;
-  padding: 30px; }
+  position: fixed;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 110px; }
+
+div.center {
+  width: 960px;
+  margin: 0 auto; }

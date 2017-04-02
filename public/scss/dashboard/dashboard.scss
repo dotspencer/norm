@@ -1,14 +1,15 @@
 @import '../colors';
 @import '../general';
 
-$dark-menu: #273138;
+//$dark-menu: #273138;
+$dark-menu: #191f23;
 $darkish-menu: #404B54;
 $menu-border: 1px solid rgba(0, 0, 0, 0.3);
 
 body{
   // background-color: $dark;
-  background-color: white;
-  color: #333;
+  background-color: whitesmoke;
+  color: $dark-menu;
 }
 div, header{
   box-sizing: border-box;
@@ -17,10 +18,14 @@ html{
   overflow: hidden;
 }
 
+h1, h2, h3 {
+  font-weight: 300;
+  // color: $color;
+}
+
 $header-height: 60px;
 header {
   background-color: $dark-menu;
-  border-bottom: $menu-border;
   float: left;
   width: 100%;
   line-height: $header-height;
@@ -45,13 +50,14 @@ header {
 
 div.expand-menu {
     position: fixed;
-    top: 61px;
-    right: 0;
-    //padding: 10px;
-    background-color: $darkish-menu;
-    // width: 160px;
+    top: $header-height;
+    right: 5px;
+    background-color: #e6e6e6;
+    border: 1px solid lightgray;
+    z-index: 20;
+
     a{
-      color: $light-text;
+      color: #333;
       border: none;
       display: block;
       padding: 10px 30px;
@@ -61,9 +67,9 @@ div.expand-menu {
 $side-width: 110px;
 div.side {
   background-color: $darkish-menu;
-  float: left;
-  height: calc(100vh - #{$header-height});
-  border-right: $menu-border;
+  position: fixed;
+  top: $header-height;
+  bottom: 0;
   width: $side-width;
 
   a{
@@ -86,15 +92,20 @@ div.side {
   .icon{
     width: 30px;
     vertical-align: middle;
-    // margin-right: 10px;
     opacity: .8;
   }
 }
 
 div.content{
-  float: left;
-  width: calc(100% - #{$side-width});
-  height: calc(100vh - #{$header-height});
   overflow-y: scroll;
-  padding: 30px;
+  position: fixed;
+  top: $header-height;
+  right: 0;
+  bottom: 0;
+  left: $side-width;
+}
+
+div.center{
+  width: 960px;
+  margin: 0 auto;
 }
