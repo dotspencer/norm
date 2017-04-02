@@ -2,6 +2,7 @@ var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var mysql = require('mysql');
 var MySQLStore = require('express-mysql-session')(session);
 
 var keys = require('./src/config/keys.json');
@@ -18,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 // Database
-var mysql = require('mysql');
 app.locals.db = mysql.createConnection({
   host     : 'localhost',
   user     : keys.mysql.username,
