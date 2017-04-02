@@ -25,7 +25,8 @@ var settingsClass = staticHelper.currentPage(settingsLink, req);
       </a>
       <div class="name"><%= req.session.userName %></div>
     </header>
-    <div class="expand-menu">
+    <div class="expand-menu hidden">
+      <a href="#" class="disabled">Account Settings</a>
       <a href="/signout">Logout</a>
     </div>
     <div class="side">
@@ -51,5 +52,8 @@ var settingsClass = staticHelper.currentPage(settingsLink, req);
         <%-body%>
       </div>
     </div>
+    <footer>
+      <script src="/js/dash.js" charset="utf-8"></script>
+    </footer>
   </body>
 </html>

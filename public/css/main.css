@@ -34,6 +34,12 @@ p, label, a {
 p {
   margin: 1.5rem 0; }
 
+.disabled {
+  pointer-events: none; }
+
+.hidden {
+  display: none; }
+
 .content {
   width: 600px;
   margin: 0 auto; }
