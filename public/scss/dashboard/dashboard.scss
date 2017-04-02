@@ -1,12 +1,14 @@
 @import '../colors';
 @import '../general';
 
-$dark-menu: rgba(0, 0, 0, 0.20);
+$dark-menu: #273138;
+$darkish-menu: #404B54;
 $menu-border: 1px solid rgba(0, 0, 0, 0.3);
 
 body{
-  background-color: $dark;
   // background-color: $dark;
+  background-color: white;
+  color: #333;
 }
 div, header{
   box-sizing: border-box;
@@ -36,13 +38,29 @@ header {
     padding: 0 20px;
     border-left: 1px solid rgba(0, 0, 0, 0.6);
     min-width: 50px;
+    color: $light-text;
     cursor: pointer;
   }
 }
 
+div.expand-menu {
+    position: fixed;
+    top: 61px;
+    right: 0;
+    //padding: 10px;
+    background-color: $darkish-menu;
+    // width: 160px;
+    a{
+      color: $light-text;
+      border: none;
+      display: block;
+      padding: 10px 30px;
+    }
+}
+
 $side-width: 110px;
 div.side {
-  background-color: $dark-menu;
+  background-color: $darkish-menu;
   float: left;
   height: calc(100vh - #{$header-height});
   border-right: $menu-border;

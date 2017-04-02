@@ -34,7 +34,8 @@ p {
   margin: 1.5rem 0; }
 
 body {
-  background-color: #313d46; }
+  background-color: white;
+  color: #333; }
 
 div, header {
   box-sizing: border-box; }
@@ -43,7 +44,7 @@ html {
   overflow: hidden; }
 
 header {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #273138;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   float: left;
   width: 100%;
@@ -61,10 +62,22 @@ header {
     padding: 0 20px;
     border-left: 1px solid rgba(0, 0, 0, 0.6);
     min-width: 50px;
+    color: #d2d2d2;
     cursor: pointer; }
 
+div.expand-menu {
+  position: fixed;
+  top: 61px;
+  right: 0;
+  background-color: #404B54; }
+  div.expand-menu a {
+    color: #d2d2d2;
+    border: none;
+    display: block;
+    padding: 10px 30px; }
+
 div.side {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #404B54;
   float: left;
   height: calc(100vh - 60px);
   border-right: 1px solid rgba(0, 0, 0, 0.3);
