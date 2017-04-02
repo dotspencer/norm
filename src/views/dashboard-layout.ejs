@@ -25,6 +25,9 @@ var settingsClass = staticHelper.currentPage(settingsLink, req);
       </a>
       <div class="name"><%= req.session.userName %></div>
     </header>
+    <%# <div class="expand-menu">
+      <a href="/signout">Sign Out</a>
+    </div>%>
     <div class="side">
       <a href="<%= messageLink %>" class="<%= messageClass %>">
         <img class="icon" src="/images/message.png" alt="">

@@ -47,7 +47,7 @@ function login(req, res){
 */
 function getUserByEmail(req, res, db, email, next) {
   // Lookup user email
-  var sql = "SELECT * FROM User WHERE email = ?";
+  var sql = "SELECT * FROM Users WHERE email = ?";
   db.query(sql, [email], function(err, results, fields) {
     if (err) {
       console.log(err.message);

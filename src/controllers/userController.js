@@ -18,7 +18,7 @@ function showPage(req, res){
 function signup(req, res){
   var db = req.app.locals.db;
 
-  var sql = 'INSERT INTO user (email, name, hash) VALUES (?, ?, ?);';
+  var sql = 'INSERT INTO Users (email, name, hash) VALUES (?, ?, ?);';
 
   var email = req.body.email;
   var name = req.body.name;
