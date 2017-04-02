@@ -32,6 +32,7 @@ var router = function(app){
   // Dashboard
   app.get('/dashboard', dashboardController.showDashboard);
   app.get('/dashboard/logs', dashboardController.showLogs);
+  app.get('/dashboard/settings', dashboardController.showSettings);
 
 };
 

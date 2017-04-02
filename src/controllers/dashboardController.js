@@ -14,6 +14,10 @@ function showDashboard(req, res){
 }
 
 function showLogs(req, res){
+  if(!loggedIn(req)){
+    res.redirect('/login');
+    return;
+  }
 
   var vars = {
     req: req,
@@ -22,7 +26,21 @@ function showLogs(req, res){
   res.render('logs', vars);
 }
 
+function showSettings(req, res){
+  if(!loggedIn(req)){
+    res.redirect('/login');
+    return;
+  }
+
+  var vars = {
+    req: req,
+    layout: 'dashboard-layout'
+  };
+  res.render('settings', vars);
+}
+
 module.exports = {
   showDashboard: showDashboard,
-  showLogs: showLogs
+  showLogs: showLogs,
+  showSettings: showSettings
 };
