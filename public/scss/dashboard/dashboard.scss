@@ -48,14 +48,12 @@ div.side {
   width: $side-width;
 
   a{
-    border: none;
     width: 100%;
     display: block;
-  }
-  .link{
     padding: 10px;
     text-align: center;
     border-bottom: $menu-border;
+    box-sizing: border-box;
 
     &.current {
       background-color: rgba(0, 0, 0, 0.22);

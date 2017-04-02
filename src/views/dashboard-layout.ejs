@@ -5,7 +5,7 @@ var logsLink = '/dashboard/logs';
 var messageClass = staticHelper.currentPage(messageLink, req);
 var logsClass = staticHelper.currentPage(logsLink, req);
 
-// TODO: Convert into isAdmin
+// TODO: Convert into isAdmin (or just set req.session.isAdmin)
 // var loggedIn = req.session != null && req.session.userID != null;
 %>
 
@@ -24,14 +24,14 @@ var logsClass = staticHelper.currentPage(logsLink, req);
       <div class="name"><%= req.session.userName %></div>
     </header>
     <div class="side">
-      <div class="link">
+      <a href="<%= messageLink %>" class="<%= messageClass %>">
         <img class="icon" src="/images/message.png" alt="">
         <div class="text">Message</div>
-      </div>
-      <div class="link">
+      </a>
+      <a href="<%= logsLink %>"class="<%= logsClass %>">
         <img class="icon" src="/images/list.png" alt="">
         <div class="text">Logs</div>
-      </div>
+      </a>
       </div>
       <div class="admin group">
 

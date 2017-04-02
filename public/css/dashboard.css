@@ -70,14 +70,13 @@ div.side {
   border-right: 1px solid rgba(0, 0, 0, 0.3);
   width: 100px; }
   div.side a {
-    border: none;
     width: 100%;
-    display: block; }
-  div.side .link {
+    display: block;
     padding: 10px;
     text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
-    div.side .link.current {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-sizing: border-box; }
+    div.side a.current {
       background-color: rgba(0, 0, 0, 0.22); }
   div.side .text {
     font-size: 1.1rem;
