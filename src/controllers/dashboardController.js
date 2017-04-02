@@ -13,7 +13,16 @@ function showDashboard(req, res){
   res.render('dashboard', vars);
 }
 
+function showLogs(req, res){
+
+  var vars = {
+    req: req,
+    layout: 'dashboard-layout'
+  };
+  res.render('logs', vars);
+}
 
 module.exports = {
-  showDashboard: showDashboard
+  showDashboard: showDashboard,
+  showLogs: showLogs
 };
