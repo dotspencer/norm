@@ -8,6 +8,9 @@ var transporter = nodemailer.createTransport({
     }
 });
 
+/*
+  Sends verification email using nodemailer
+*/
 function sendVerification(email, token){
   var verifyLink = "http://effortlessreviews.com/verify/" + token;
   var body = "<h2>Review Norm</h2>" +
@@ -33,6 +36,9 @@ function sendVerification(email, token){
   });
 }
 
+/*
+  Verifies the user in the database from the user token
+*/
 function verifyToken(req, res){
   var db = req.app.locals.db;
 
@@ -41,6 +47,10 @@ function verifyToken(req, res){
     if(err){
       return console.log(err);
     }
+
+    // TODO:  Could add check to see if user is already verified.
+    //        Current error message works since a token is inavlid
+    //        if it has already been used.
 
     if(results.changedRows == 0){
       var vars = {
