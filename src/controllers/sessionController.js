@@ -35,7 +35,7 @@ function login(req, res){
   formEmail = (formEmail == null | formEmail.length == 0) ? null : formEmail;
   formPassword = (formPassword == null | formPassword.length == 0) ? null : formPassword;
   if(formEmail == null | formPassword == null){
-    renderError(req, res, 'login', "Required field(s) cannot be empty.");
+    renderError(req, res, 'main/login', "Required field(s) cannot be empty.");
     return;
   }
 
@@ -57,7 +57,7 @@ function getUserByEmail(req, res, db, email, next) {
     var user = results.length < 1 ? null : results[0];
 
     if(user == null){
-      renderError(req, res, 'login', "Email could not be found");
+      renderError(req, res, 'main/login', "Email could not be found");
       return;
     }
 
@@ -73,14 +73,19 @@ function createSession(req, res, user){
   // Email found, hash it, match it
   var formEmail = req.body.email;
   var formPassword = req.body.password;
-  var match = bcrypt.compareSync(formPassword, user.hash);
 
+  var verified = user.verified;
+  if(verified == 0){
+    return renderError(req, res, 'main/login', "Please confirm email before logging in.");
+  }
+
+  var match = bcrypt.compareSync(formPassword, user.hash);
   if(match){
     req.session.userID = user.id;
     req.session.userName = user.name;
     res.redirect('/dashboard');
   } else {
-    renderError(req, res, 'login', "Incorrect password. Try again.");
+    renderError(req, res, 'main/login', "Incorrect password. Try again.");
   }
 }
 
