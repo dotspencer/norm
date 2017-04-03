@@ -67,7 +67,7 @@ function showAll(req, res){
   }
 
   var db = req.app.locals.db;
-  db.query('SELECT * FROM user;', function(err, rows){
+  db.query('SELECT * FROM Users;', function(err, rows){
     if(err){
       res.send(err.message);
       return;
