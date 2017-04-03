@@ -9,5 +9,6 @@ mysql> describe Users;
 | verified        | tinyint(1)            | NO   |     | 0       |                |
 | admin           | tinyint(1)            | NO   |     | 0       |                |
 | google_place_id | varchar(60)           | YES  |     | NULL    |                |
+| token           | varchar(60)           | NO   |     | NULL    |                |
 +-----------------+-----------------------+------+-----+---------+----------------+
-7 rows in set (0.00 sec)
+8 rows in set (0.00 sec)
