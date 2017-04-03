@@ -8,9 +8,22 @@ function showDashboard(req, res){
 
   var vars = {
     req: req,
-    layout: 'dashboard-layout'
+    layout: 'dashboard/layout'
   };
-  res.render('dashboard', vars);
+  res.render('dashboard/dash', vars);
+}
+
+function showStats(req, res){
+  if(!loggedIn(req)){
+    res.redirect('/login');
+    return;
+  }
+
+  var vars = {
+    req: req,
+    layout: 'dashboard/layout'
+  };
+  res.render('dashboard/stats', vars);
 }
 
 function showLogs(req, res){
@@ -21,9 +34,9 @@ function showLogs(req, res){
 
   var vars = {
     req: req,
-    layout: 'dashboard-layout'
+    layout: 'dashboard/layout'
   };
-  res.render('logs', vars);
+  res.render('dashboard/logs', vars);
 }
 
 function showSettings(req, res){
@@ -34,13 +47,14 @@ function showSettings(req, res){
 
   var vars = {
     req: req,
-    layout: 'dashboard-layout'
+    layout: 'dashboard/layout'
   };
-  res.render('settings', vars);
+  res.render('dashboard/settings', vars);
 }
 
 module.exports = {
   showDashboard: showDashboard,
+  showStats: showStats,
   showLogs: showLogs,
   showSettings: showSettings
 };

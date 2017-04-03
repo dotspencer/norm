@@ -9,7 +9,7 @@ function showPage(req, res){
   // Log user out if they are trying to signup again
   req.session.destroy();
 
-  res.render('signup', {req: req});
+  res.render('main/signup', {req: req});
 };
 
 /**
@@ -47,7 +47,7 @@ function signup(req, res){
       type: "info",
       message: "Check your email to verify your account."
     };
-    res.render('login', {req: req, flash: flash});
+    res.render('main/login', {req: req, flash: flash});
 
   });
 };
@@ -56,8 +56,10 @@ function verify(req, res){
   res.send('Verify users from this page.');
 }
 
+
 /**
  * Shows all users in database
+ *  TODO: Move into admin dashboard page
  */
 function showAll(req, res){
   if(!loggedIn(req)){

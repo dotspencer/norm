@@ -12,7 +12,7 @@ var router = function(app){
       return;
     }
     // Other users can see the homepage
-    res.render('home', {req: req});
+    res.render('main/home', {req: req});
   });
 
   app.get('/login', sessionController.showPage);
@@ -31,6 +31,7 @@ var router = function(app){
 
   // Dashboard
   app.get('/dashboard', dashboardController.showDashboard);
+  app.get('/dashboard/stats', dashboardController.showStats);
   app.get('/dashboard/logs', dashboardController.showLogs);
   app.get('/dashboard/settings', dashboardController.showSettings);
 

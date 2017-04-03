@@ -10,7 +10,7 @@ function showPage(req, res) {
     res.redirect('/');
     return;
   }
-  res.render('login', { req: req });
+  res.render('main/login', { req: req });
 };
 
 /*
