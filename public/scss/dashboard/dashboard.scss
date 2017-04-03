@@ -1,119 +1,180 @@
-@import '../colors';
-@import '../general';
+$top: #333;
+$side: #444;
+$side-current: $top;
+$large: 1.5em;
 
-//$dark-menu: #273138;
-$dark-menu: $dark-gray;
-$darkish-menu: $dark-gray;
-$menu-border: 1px solid rgba(0, 0, 0, 0.3);
+$color: mediumseagreen;
 
-body{
-  // background-color: $dark;
-  background-color: whitesmoke;
-  color: $dark-menu;
-}
-div, header{
-  box-sizing: border-box;
-}
-html{
-  overflow: hidden;
+html { overflow: hidden; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-h1, h2, h3 {
-  font-weight: 300;
-  // color: $color;
-}
-
-$header-height: 60px;
-header {
-  background-color: $dark-menu;
-  float: left;
-  width: 100%;
-  border-bottom: 1px solid rgba(12, 7, 7, 0.3);
-  height: 60px;
-  line-height: $header-height;
-  user-select: none;
-
-  .logo{
-    padding: 0 20px;
-    float: left;
-    font-size: 1.5rem;
-    font-weight: 300;
-    a {font-size: initial;}
-  }
-  .name{
-    float: right;
-    font-weight: 100;
-    padding: 0 20px;
-    border-left: 1px solid rgba(0, 0, 0, 0.6);
-    min-width: 50px;
-    color: $light-text;
-    cursor: pointer;
-  }
-}
-
-div.expand-menu {
-    position: fixed;
-    top: $header-height + 6px;
-    right: 6px;
-    background-color: #e6e6e6;
-    border: 1px solid lightgray;
-    z-index: 20;
-
-    a{
-      color: #333;
-      border: none;
-      display: block;
-      padding: 10px 30px;
-      font-size: 1rem;
-      border-bottom: 1px solid lightgray;
-    }
-    a:last-child{
-      border: none;
-    }
-}
-
-$side-width: 110px;
+$side-width: 260px;
 div.side {
-  background-color: $darkish-menu;
-  position: fixed;
-  top: $header-height;
-  bottom: 0;
+  $font-color: white;
+  background-color: $side;
   width: $side-width;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
 
-  a{
-    width: 100%;
-    display: block;
-    padding: 15px;
+  .logo {
+    font-size: $large;
+    padding: 20px;
+    background-color: mediumseagreen;
+    background-color: indianred;
+    // background: linear-gradient(crimson, #ff6850);
+    color: $font-color;
+    // text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    font-weight: 200;
+    letter-spacing: 2px;
     text-align: center;
-    border-bottom: $menu-border;
-    box-sizing: border-box;
+  }
 
-    &.current {
-      background-color: rgba(0, 0, 0, 0.22);
+  a {
+    color: $font-color;
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    display: block;
+    padding: 10px 20px;
+    opacity: .5;
+    transition: opacity .15s;
+    &.min{
+      opacity: initial;
+      padding: initial;
+      letter-spacing: initial;
+      color: initial;
+      font-size: initial;
     }
-  }
-  .text{
-    font-size: 1.1rem;
-    font-weight: 100;
-    margin: 5px 0;
-  }
-  .icon{
-    width: 30px;
-    vertical-align: middle;
-    opacity: .8;
+    &:hover{
+      opacity: 1;
+    }
+    &.current{
+      opacity: 1;
+      background-color: $side-current;
+    }
+
+    img {
+      vertical-align: middle;
+      width: 32px;
+      margin-right: 15px;
+    }
   }
 }
 
 div.content{
-  overflow-y: scroll;
   position: fixed;
-  top: $header-height;
+  top: 0;
   right: 0;
   bottom: 0;
   left: $side-width;
+  padding: 0 15px;
+  background-color: whitesmoke;
+
+  .center{
+    max-width: 800px;
+    margin: 40px auto;
+  }
+
+  .part {
+    $padding: 20px;
+    background-color: white;
+    padding: $padding;
+    float: left;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    margin: 15px;
+    color: #333;
+
+    &.skinny{
+      padding: 0;
+    }
+    &.clear-left{
+      clear: left;
+    }
+    .top {
+      text-align: center;
+      padding: ($padding / 2) $padding;
+      border-bottom: 1px solid lightgray;
+    }
+    .bottom {
+      text-align: center;
+      padding: ($padding / 2) $padding;
+    }
+
+    table{
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 15px;
+      font-weight: normal;
+      border-bottom: 1px solid lightgray;
+    }
+    td + td, th + th {
+      border-left: 1px solid lightgray;
+    }
+    td.num {
+      text-align: center;
+      padding: ($padding / 2) $padding;
+      font-size: 5em;
+      font-weight: 200;
+      letter-spacing: -4px;
+    }
+
+    &#invite{
+      padding-left: $padding * 2;
+      padding-right: $padding * 2;
+    }
+  }
+
+  input{
+    font-family: inherit;
+    font-weight: 300;
+    padding: 10px;
+    font-size: $large;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline: none;
+
+    &::placeholder{
+      color: lightgray;
+      font-weight: 200;
+    }
+  }
+
+  button {
+    background-color: $color;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 200;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .15s;
+
+    img {
+      vertical-align: middle;
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: darken($color, 4);
+    }
+  }
+
+  button#send {
+    margin-left: 40px;
+  }
 }
 
-div.center{
-  width: 960px;
-  margin: 0 auto;
+@media (max-width: 890px){
+  .content {
+    width: 630px;
+  }
 }

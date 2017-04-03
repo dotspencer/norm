@@ -1,130 +1,127 @@
-.red {
-  color: indianred; }
-
-.color {
-  color: mediumseagreen; }
-
-body {
-  font-family: 'GTEestiDisplay-Medium',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
-  background-color: #313d46;
-  color: #d2d2d2;
-  margin: 0; }
-
-a {
-  text-decoration: none;
-  color: #d2d2d2;
-  border-bottom: 2px solid rgba(210, 210, 210, 0.2);
-  transition: 0.15s all;
-  padding: .1rem 0; }
-  a:hover, a.current {
-    border-bottom: 2px solid #d2d2d2; }
-
-.logo a {
-  font-size: 1.7rem;
-  border: none;
-  margin: 0;
-  padding: 0;
-  font-weight: 300; }
-
-p, label, a {
-  font-weight: 300;
-  font-size: 1.06rem; }
-
-p {
-  margin: 1.5rem 0; }
-
-.disabled {
-  pointer-events: none; }
-
-.hidden {
-  display: none; }
-
-body {
-  background-color: whitesmoke;
-  color: #3f474c; }
-
-div, header {
-  box-sizing: border-box; }
-
 html {
   overflow: hidden; }
 
-h1, h2, h3 {
-  font-weight: 300; }
-
-header {
-  background-color: #3f474c;
-  float: left;
-  width: 100%;
-  border-bottom: 1px solid rgba(12, 7, 7, 0.3);
-  height: 60px;
-  line-height: 60px;
-  user-select: none; }
-  header .logo {
-    padding: 0 20px;
-    float: left;
-    font-size: 1.5rem;
-    font-weight: 300; }
-    header .logo a {
-      font-size: initial; }
-  header .name {
-    float: right;
-    font-weight: 100;
-    padding: 0 20px;
-    border-left: 1px solid rgba(0, 0, 0, 0.6);
-    min-width: 50px;
-    color: #d2d2d2;
-    cursor: pointer; }
-
-div.expand-menu {
-  position: fixed;
-  top: 66px;
-  right: 6px;
-  background-color: #e6e6e6;
-  border: 1px solid lightgray;
-  z-index: 20; }
-  div.expand-menu a {
-    color: #333;
-    border: none;
-    display: block;
-    padding: 10px 30px;
-    font-size: 1rem;
-    border-bottom: 1px solid lightgray; }
-  div.expand-menu a:last-child {
-    border: none; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
 
 div.side {
-  background-color: #3f474c;
+  background-color: #444;
+  width: 260px;
   position: fixed;
-  top: 60px;
-  bottom: 0;
-  width: 110px; }
+  top: 0;
+  left: 0;
+  bottom: 0; }
+  div.side .logo {
+    font-size: 1.5em;
+    padding: 20px;
+    background-color: mediumseagreen;
+    background-color: indianred;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-align: center; }
   div.side a {
-    width: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 1px;
     display: block;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    box-sizing: border-box; }
+    padding: 10px 20px;
+    opacity: .5;
+    transition: opacity .15s; }
+    div.side a.min {
+      opacity: initial;
+      padding: initial;
+      letter-spacing: initial;
+      color: initial;
+      font-size: initial; }
+    div.side a:hover {
+      opacity: 1; }
     div.side a.current {
-      background-color: rgba(0, 0, 0, 0.22); }
-  div.side .text {
-    font-size: 1.1rem;
-    font-weight: 100;
-    margin: 5px 0; }
-  div.side .icon {
-    width: 30px;
-    vertical-align: middle;
-    opacity: .8; }
+      opacity: 1;
+      background-color: #333; }
+    div.side a img {
+      vertical-align: middle;
+      width: 32px;
+      margin-right: 15px; }
 
 div.content {
-  overflow-y: scroll;
   position: fixed;
-  top: 60px;
+  top: 0;
   right: 0;
   bottom: 0;
-  left: 110px; }
+  left: 260px;
+  padding: 0 15px;
+  background-color: whitesmoke; }
+  div.content .center {
+    max-width: 800px;
+    margin: 40px auto; }
+  div.content .part {
+    background-color: white;
+    padding: 20px;
+    float: left;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    margin: 15px;
+    color: #333; }
+    div.content .part.skinny {
+      padding: 0; }
+    div.content .part.clear-left {
+      clear: left; }
+    div.content .part .top {
+      text-align: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid lightgray; }
+    div.content .part .bottom {
+      text-align: center;
+      padding: 10px 20px; }
+    div.content .part table {
+      border-collapse: collapse; }
+    div.content .part th {
+      padding: 15px;
+      font-weight: normal;
+      border-bottom: 1px solid lightgray; }
+    div.content .part td + td, div.content .part th + th {
+      border-left: 1px solid lightgray; }
+    div.content .part td.num {
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 5em;
+      font-weight: 200;
+      letter-spacing: -4px; }
+    div.content .part#invite {
+      padding-left: 40px;
+      padding-right: 40px; }
+  div.content input {
+    font-family: inherit;
+    font-weight: 300;
+    padding: 10px;
+    font-size: 1.5em;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    outline: none; }
+    div.content input::placeholder {
+      color: lightgray;
+      font-weight: 200; }
+  div.content button {
+    background-color: mediumseagreen;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 200;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .15s; }
+    div.content button img {
+      vertical-align: middle;
+      width: 20px;
+      margin-right: 10px; }
+    div.content button:hover {
+      background-color: #37a467; }
+  div.content button#send {
+    margin-left: 40px; }
 
-div.center {
-  width: 960px;
-  margin: 0 auto; }
+@media (max-width: 890px) {
+  .content {
+    width: 630px; } }

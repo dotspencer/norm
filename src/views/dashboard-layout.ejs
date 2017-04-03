@@ -1,9 +1,11 @@
 <%
-var messageLink = '/dashboard';
+var dashboardLink = '/dashboard';
+var statsLink = '/dashboard/stats';
 var logsLink = '/dashboard/logs';
 var settingsLink = '/dashboard/settings';
 
-var messageClass = staticHelper.currentPage(messageLink, req);
+var dashboardClass = staticHelper.currentPage(dashboardLink, req);
+var statsClass = staticHelper.currentPage(statsLink, req);
 var logsClass = staticHelper.currentPage(logsLink, req);
 var settingsClass = staticHelper.currentPage(settingsLink, req);
 
@@ -15,45 +17,24 @@ var settingsClass = staticHelper.currentPage(settingsLink, req);
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/dashboard.css">
     <title></title>
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <a href="/dashboard">
-        <div class="logo">Review <span class="color">Norm</span></div>
-      </a>
-      <div class="name"><%= req.session.userName %></div>
-    </header>
-    <div class="expand-menu hidden">
-      <a href="#" class="disabled">Account Settings</a>
-      <a href="/signout">Logout</a>
-    </div>
     <div class="side">
-      <a href="<%= messageLink %>" class="<%= messageClass %>">
-        <img class="icon" src="/images/message.png" alt="">
-        <div class="text">Message</div>
-      </a>
-      <a href="<%= logsLink %>"class="<%= logsClass %>">
-        <img class="icon" src="/images/list.png" alt="">
-        <div class="text">Logs</div>
-      </a>
-      <a href="<%= settingsLink %>"class="<%= settingsClass %>">
-        <img class="icon" src="/images/settings.png" alt="">
-        <div class="text">Settings</div>
-      </a>
-      </div>
-      <div class="admin group">
-
-      </div>
+      <a href="<%= dashboardLink %>" class="min"><div class="logo">Effortless Reviews</div></a>
+      <nav>
+        <a href="<%= dashboardLink %>" class="<%= dashboardClass %>"><img src="/images/message-white.svg" alt=""> Dashboard</a>
+        <a href="<%= statsLink %>" class="<%= statsClass %>"><img src="/images/chart-white.svg" alt=""> Statistics</a>
+        <a href="<%= logsLink %>" class="<%= logsClass %>"><img src="/images/list-white.svg" alt=""> Logs</a>
+        <a href="<%= settingsLink %>" class="<%= settingsClass %>"><img src="/images/settings-white.svg" alt=""> Settings</a>
+      </nav>
     </div>
     <div class="content">
       <div class="center">
-        <%-body%>
+        <%- body %>
       </div>
     </div>
-    <footer>
-      <script src="/js/dash.js" charset="utf-8"></script>
-    </footer>
   </body>
 </html>
