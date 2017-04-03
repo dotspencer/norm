@@ -49,7 +49,7 @@ function signup(req, res){
       message: "Check your email to verify your account."
     };
     res.render('main/login', {req: req, flash: flash});
-    emailController.sendVerification(email);
+    emailController.sendVerification(db, email);
   });
 };
 
