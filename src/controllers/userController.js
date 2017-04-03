@@ -1,6 +1,7 @@
 var bcrypt = require('bcrypt');
 var staticHelper = require('../helpers/staticHelper');
 var loggedIn = require('../helpers/loggedIn.js');
+var emailController = require('./emailController');
 
 /**
  * Renders the signup page
@@ -38,7 +39,7 @@ function signup(req, res){
         type: "error",
         message: staticHelper.parseError(err)
       };
-      res.render('signup', {req: req, flash: flash});
+      res.render('main/signup', {req: req, flash: flash});
       return;
     }
 
@@ -48,7 +49,7 @@ function signup(req, res){
       message: "Check your email to verify your account."
     };
     res.render('main/login', {req: req, flash: flash});
-
+    emailController.sendVerification(email);
   });
 };
 

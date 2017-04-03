@@ -1,0 +1,9 @@
+mysql> describe Links;
++---------+-----------------------+------+-----+---------+-------+
+| Field   | Type                  | Null | Key | Default | Extra |
++---------+-----------------------+------+-----+---------+-------+
+| user_id | mediumint(8) unsigned | NO   | PRI | NULL    |       |
+| type    | varchar(30)           | NO   | PRI | NULL    |       |
+| url     | text                  | NO   |     | NULL    |       |
++---------+-----------------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
