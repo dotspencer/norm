@@ -41,7 +41,7 @@ p {
 
 body {
   background-color: whitesmoke;
-  color: #191f23; }
+  color: #3f474c; }
 
 div, header {
   box-sizing: border-box; }
@@ -53,9 +53,11 @@ h1, h2, h3 {
   font-weight: 300; }
 
 header {
-  background-color: #191f23;
+  background-color: #3f474c;
   float: left;
   width: 100%;
+  border-bottom: 1px solid rgba(12, 7, 7, 0.3);
+  height: 60px;
   line-height: 60px;
   user-select: none; }
   header .logo {
@@ -92,7 +94,7 @@ div.expand-menu {
     border: none; }
 
 div.side {
-  background-color: #404B54;
+  background-color: #3f474c;
   position: fixed;
   top: 60px;
   bottom: 0;

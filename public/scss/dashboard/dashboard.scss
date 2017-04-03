@@ -2,8 +2,8 @@
 @import '../general';
 
 //$dark-menu: #273138;
-$dark-menu: #191f23;
-$darkish-menu: #404B54;
+$dark-menu: $dark-gray;
+$darkish-menu: $dark-gray;
 $menu-border: 1px solid rgba(0, 0, 0, 0.3);
 
 body{
@@ -28,6 +28,8 @@ header {
   background-color: $dark-menu;
   float: left;
   width: 100%;
+  border-bottom: 1px solid rgba(12, 7, 7, 0.3);
+  height: 60px;
   line-height: $header-height;
   user-select: none;
 
