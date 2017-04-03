@@ -1,6 +1,7 @@
 var userController = require('../controllers/userController');
 var sessionController = require('../controllers/sessionController');
 var dashboardController = require('../controllers/dashboardController');
+var emailController = require('../controllers/emailController');
 var loggedIn = require('../helpers/loggedIn.js');
 
 var router = function(app){
@@ -35,6 +36,8 @@ var router = function(app){
   app.get('/dashboard/logs', dashboardController.showLogs);
   app.get('/dashboard/settings', dashboardController.showSettings);
 
+  // Verify
+  app.get('/verify/:token', emailController.verifyToken);
 };
 
 module.exports = router;

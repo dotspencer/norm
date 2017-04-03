@@ -1,4 +1,5 @@
 var bcrypt = require('bcrypt');
+var randomstring = require('randomstring');
 var staticHelper = require('../helpers/staticHelper');
 var loggedIn = require('../helpers/loggedIn.js');
 var emailController = require('./emailController');
@@ -19,11 +20,12 @@ function showPage(req, res){
 function signup(req, res){
   var db = req.app.locals.db;
 
-  var sql = 'INSERT INTO Users (email, name, hash) VALUES (?, ?, ?);';
+  var sql = 'INSERT INTO Users (email, name, hash, token) VALUES (?, ?, ?, ?);';
 
   var email = req.body.email;
   var name = req.body.name;
   var hash = bcrypt.hashSync(req.body.password, 11);
+  var token = randomstring.generate();
   var message = "";
 
   // Prevent empty strings from being submitted
@@ -31,7 +33,7 @@ function signup(req, res){
   name = name.length == 0 ? null : name;
   hash = req.body.password == 0 ? null : hash;
 
-  db.query(sql, [email, name, hash], function(err, results, fields){
+  db.query(sql, [email, name, hash, token], function(err, results, fields){
 
     // On error
     if(err){
@@ -49,7 +51,7 @@ function signup(req, res){
       message: "Check your email to verify your account."
     };
     res.render('main/login', {req: req, flash: flash});
-    emailController.sendVerification(db, email);
+    emailController.sendVerification(email, token);
   });
 };
 

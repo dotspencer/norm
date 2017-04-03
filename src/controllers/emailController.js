@@ -8,46 +8,66 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-function sendVerification(db, email){
+function sendVerification(email, token){
+  var verifyLink = "http://effortlessreviews.com/verify/" + token;
+  var body = "<h2>Review Norm</h2>" +
+             "<p>Click the link below to verify your new account</p>" +
+             "<p><a href='" + verifyLink + "'>" + verifyLink + "</a></p>";
 
-  var sql = "SELECT * FROM Users WHERE email = ?;";
-  db.query(sql, [email], function(err, results, fields){
+  // setup email data with unicode symbols
+  let mailOptions = {
+    from: '"Review Norm" <reviewnorm@gmail.com>', // sender address
+    to: email, // list of receivers
+    subject: 'Verify Review Norm Account', // Subject line
+    // text: 'Hello user, this is a test.', // plain text body
+    html: body // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return console.log(error);
     }
-    if(results.length == 0){
-      return console.log("## No user with that email address found ##")
+    console.log('Message %s sent: %s', info.messageId, info.response);
+    transporter.close();
+  });
+}
+
+function verifyToken(req, res){
+  var db = req.app.locals.db;
+
+  var sql = "UPDATE Users SET verified=1 WHERE token=?;"
+  db.query(sql, [req.params.token], function(err, results, fields){
+    if(err){
+      return console.log(err);
     }
 
-    var user = results[0];
-    var verifyLink = "http://effortlessreviews.com/verify/" + user.token;
-    var body = "<h3>Review Norm</h3>" +
-               "<p>Click the link below to verify your new account</p>" +
-               "<p><a href='" + verifyLink + "'>verifyLink</a></p>";
+    if(results.changedRows == 0){
+      var vars = {
+        req: req,
+        flash: {
+          type: "error",
+          message: "Invalid email token."
+        }
+      };
+      res.render('main/login', vars);
+      return;
+    }
 
-    // setup email data with unicode symbols
-    let mailOptions = {
-      from: '"Review Norm" <reviewnorm@gmail.com>', // sender address
-      to: email, // list of receivers
-      subject: 'Verify Review Norm Account', // Subject line
-      // text: 'Hello user, this is a test.', // plain text body
-      html: body // html body
-    };
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        return console.log(error);
+    var vars = {
+      req: req,
+      flash: {
+        type: "success",
+        message: "Email verified successfully. Log in below."
       }
-      console.log('Message %s sent: %s', info.messageId, info.response);
-      transporter.close();
-    });
-
+    };
+    res.render('main/login', vars);
   });
 }
 
 
 
 module.exports = {
-  sendVerification: sendVerification
+  sendVerification: sendVerification,
+  verifyToken: verifyToken
 }
