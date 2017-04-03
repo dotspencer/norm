@@ -163,8 +163,9 @@ div.content{
       margin-right: 10px;
     }
 
-    &:hover {
+    &:hover, &:focus {
       background-color: darken($color, 4);
+      outline: none;
     }
   }
 

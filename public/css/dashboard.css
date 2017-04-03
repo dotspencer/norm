@@ -117,8 +117,9 @@ div.content {
       vertical-align: middle;
       width: 20px;
       margin-right: 10px; }
-    div.content button:hover {
-      background-color: #37a467; }
+    div.content button:hover, div.content button:focus {
+      background-color: #37a467;
+      outline: none; }
   div.content button#send {
     margin-left: 40px; }
 
