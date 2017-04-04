@@ -26,6 +26,7 @@ var router = function(app){
   app.post('/signup', userController.signup);
   app.get('/user/verify', userController.verify);
   app.post('/user/update_place_id', userController.updatePlaceID);
+  app.post('/user/update', userController.updateGeneral);
 
   app.get('/test', function(req, res){
     res.render('test', {req: req});

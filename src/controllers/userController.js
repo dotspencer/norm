@@ -95,10 +95,27 @@ function updatePlaceID(req, res){
   });
 }
 
+function updateGeneral(req, res){
+  var nullExists = req.body.name == null || req.body.name.length == 0;
+  nullExists = nullExists || req.body.email == null || req.body.email.length == 0;
+
+  if(nullExists){
+    return res.redirect('/dashboard/settings');
+  }
+
+  var db = req.app.locals.db;
+  var sql = "UPDATE Users SET name=?, email=? WHERE id=?;";
+  db.query(sql, [req.body.name, req.body.email, req.session.userID], function(err, results, fields){
+    if(err) console.log(err);
+    res.redirect('/dashboard/settings');
+  });
+}
+
 module.exports = {
   showPage: showPage,
   signup: signup,
   verify: verify,
   updatePlaceID: updatePlaceID,
+  updateGeneral: updateGeneral,
   showAll: showAll
 };
