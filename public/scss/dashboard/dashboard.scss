@@ -1,7 +1,7 @@
 $top: #333;
 $side: #444;
 $side-current: $top;
-$large: 1.5em;
+$large: 1.8rem;
 
 $color: mediumseagreen;
 
@@ -22,13 +22,15 @@ div.side {
 
   .logo {
     font-size: $large;
-    padding: 20px;
+    padding: 20px 0;
     background-color: mediumseagreen;
     background-color: indianred;
+    background-color: tomato;
+    font-family: 'Ubuntu Condensed', sans-serif;
     // background: linear-gradient(crimson, #ff6850);
     color: $font-color;
     // text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    font-weight: 200;
+    font-weight: 400;
     letter-spacing: 2px;
     text-align: center;
   }
@@ -37,6 +39,7 @@ div.side {
     color: $font-color;
     text-decoration: none;
     font-size: 1.1em;
+    font-weight: 100;
     letter-spacing: 1px;
     display: block;
     padding: 10px 20px;
@@ -149,14 +152,26 @@ div.content{
     }
 
     &[type='text'] {
-      font-size: 1em;
+      font-size: 1rem;
       padding: 5px;
+    }
+  }
+
+  form {
+    ul{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style-type: none;
+      margin-bottom: 8px;
     }
   }
 
   label{
     margin-right: 15px;
     width: 180px;
+    font-size: 1rem;
     display: inline-block;
   }
 

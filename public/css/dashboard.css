@@ -12,18 +12,21 @@ div.side {
   left: 0;
   bottom: 0; }
   div.side .logo {
-    font-size: 1.5em;
-    padding: 20px;
+    font-size: 1.8rem;
+    padding: 20px 0;
     background-color: mediumseagreen;
     background-color: indianred;
+    background-color: tomato;
+    font-family: 'Ubuntu Condensed', sans-serif;
     color: white;
-    font-weight: 200;
+    font-weight: 400;
     letter-spacing: 2px;
     text-align: center; }
   div.side a {
     color: white;
     text-decoration: none;
     font-size: 1.1em;
+    font-weight: 100;
     letter-spacing: 1px;
     display: block;
     padding: 10px 20px;
@@ -98,18 +101,25 @@ div.content {
       font-family: inherit;
       font-weight: 300;
       padding: 10px;
-      font-size: 1.5em;
+      font-size: 1.8rem;
       border: none;
       border-bottom: 1px solid lightgray; }
       div.content input[type='tel']::placeholder {
         color: lightgray;
         font-weight: 200; }
     div.content input[type='text'] {
-      font-size: 1em;
+      font-size: 1rem;
       padding: 5px; }
+  div.content form ul {
+    margin: 0;
+    padding: 0; }
+  div.content form li {
+    list-style-type: none;
+    margin-bottom: 8px; }
   div.content label {
     margin-right: 15px;
     width: 180px;
+    font-size: 1rem;
     display: inline-block; }
   div.content button {
     background-color: mediumseagreen;
