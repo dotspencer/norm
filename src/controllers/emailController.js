@@ -12,7 +12,7 @@ var transporter = nodemailer.createTransport({
   Sends verification email using nodemailer
 */
 function sendVerification(email, token){
-  var verifyLink = "http://effortlessreviews.com/verify/" + token;
+  var verifyLink = "http://effortlessreviews.com/user/verify/" + token;
   var body = "<h2>Review Norm</h2>" +
              "<p>Click the link below to verify your new account</p>" +
              "<p><a href='" + verifyLink + "'>" + verifyLink + "</a></p>";

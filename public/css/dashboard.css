@@ -93,16 +93,24 @@ div.content {
       padding-left: 40px;
       padding-right: 40px; }
   div.content input {
-    font-family: inherit;
-    font-weight: 300;
-    padding: 10px;
-    font-size: 1.5em;
-    border: none;
-    border-bottom: 1px solid lightgray;
     outline: none; }
-    div.content input::placeholder {
-      color: lightgray;
-      font-weight: 200; }
+    div.content input[type='tel'] {
+      font-family: inherit;
+      font-weight: 300;
+      padding: 10px;
+      font-size: 1.5em;
+      border: none;
+      border-bottom: 1px solid lightgray; }
+      div.content input[type='tel']::placeholder {
+        color: lightgray;
+        font-weight: 200; }
+    div.content input[type='text'] {
+      font-size: 1em;
+      padding: 5px; }
+  div.content label {
+    margin-right: 15px;
+    width: 180px;
+    display: inline-block; }
   div.content button {
     background-color: mediumseagreen;
     color: white;
@@ -117,6 +125,11 @@ div.content {
       vertical-align: middle;
       width: 20px;
       margin-right: 10px; }
+    div.content button[type='submit'] {
+      display: block;
+      margin-top: 15px;
+      font-size: 1em;
+      padding: 5px 10px; }
     div.content button:hover, div.content button:focus {
       background-color: #37a467;
       outline: none; }

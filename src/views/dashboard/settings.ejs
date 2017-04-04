@@ -1,3 +1,13 @@
-<h1>Settings page</h1>
+<h1>Account Settings</h1>
 
-<a href="/signout"><button>Logout</button></a>
+<div class="part">
+  <form class="" action="/user/update_place_id" method="post">
+    <label for="placeID">Google Place ID:</label>
+    <input type="text" name="placeID" value="">
+    <button type="submit" name="button">Save</button>
+  </form>
+</div>
+
+<a href="/signout" style="float: left; clear: both; margin-top: 60px;"><button>Logout</button></a>
+
+<script src="/js/settings.js"></script>

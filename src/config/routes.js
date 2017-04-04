@@ -20,11 +20,12 @@ var router = function(app){
   app.post('/login', sessionController.login);
   app.get('/signout', sessionController.signout);
 
+  // Users
   app.get('/signup', userController.showPage);
   app.post('/signup', userController.signup);
-
-  app.get('/users', userController.showAll);
-  app.get('/users/verify', userController.verify);
+  // app.get('/users', userController.showAll);
+  app.get('/user/verify', userController.verify);
+  app.post('/user/update_place_id', userController.updatePlaceID);
 
   app.get('/test', function(req, res){
     res.render('test', {req: req});

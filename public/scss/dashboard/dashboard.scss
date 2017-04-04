@@ -132,18 +132,32 @@ div.content{
   }
 
   input{
-    font-family: inherit;
-    font-weight: 300;
-    padding: 10px;
-    font-size: $large;
-    border: none;
-    border-bottom: 1px solid lightgray;
     outline: none;
 
-    &::placeholder{
-      color: lightgray;
-      font-weight: 200;
+    &[type='tel'] {
+      font-family: inherit;
+      font-weight: 300;
+      padding: 10px;
+      font-size: $large;
+      border: none;
+      border-bottom: 1px solid lightgray;
+
+      &::placeholder{
+        color: lightgray;
+        font-weight: 200;
+      }
     }
+
+    &[type='text'] {
+      font-size: 1em;
+      padding: 5px;
+    }
+  }
+
+  label{
+    margin-right: 15px;
+    width: 180px;
+    display: inline-block;
   }
 
   button {
@@ -162,7 +176,12 @@ div.content{
       width: 20px;
       margin-right: 10px;
     }
-
+    &[type='submit']{
+        display: block;
+        margin-top: 15px;
+        font-size: 1em;
+        padding: 5px 10px;
+    }
     &:hover, &:focus {
       background-color: darken($color, 4);
       outline: none;

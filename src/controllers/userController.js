@@ -73,10 +73,7 @@ function showAll(req, res){
 
   var db = req.app.locals.db;
   db.query('SELECT * FROM Users;', function(err, rows){
-    if(err){
-      res.send(err.message);
-      return;
-    }
+    if(err) return res.send(err.message);
     var vars = {
       req: req,
       rows: rows
@@ -85,9 +82,23 @@ function showAll(req, res){
   });
 };
 
+function updatePlaceID(req, res){
+  if(req.body.placeID == null || req.body.placeID.length == 0){
+    return res.redirect('/dashboard/settings');
+  }
+
+  var db = req.app.locals.db;
+  var sql = "UPDATE Users SET google_place_id=? WHERE id=?;";
+  db.query(sql, [req.body.placeID, req.session.userID], function(err, results, fields){
+    if(err) console.log(err);
+    res.redirect('/dashboard/settings');
+  });
+}
+
 module.exports = {
   showPage: showPage,
   signup: signup,
   verify: verify,
+  updatePlaceID: updatePlaceID,
   showAll: showAll
 };
