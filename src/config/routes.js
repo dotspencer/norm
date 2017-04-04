@@ -2,6 +2,7 @@ var userController = require('../controllers/userController');
 var sessionController = require('../controllers/sessionController');
 var dashboardController = require('../controllers/dashboardController');
 var emailController = require('../controllers/emailController');
+var apiController = require('../controllers/apiController');
 var loggedIn = require('../helpers/loggedIn.js');
 
 var router = function(app){
@@ -23,7 +24,6 @@ var router = function(app){
   // Users
   app.get('/signup', userController.showPage);
   app.post('/signup', userController.signup);
-  // app.get('/users', userController.showAll);
   app.get('/user/verify', userController.verify);
   app.post('/user/update_place_id', userController.updatePlaceID);
 
@@ -37,8 +37,11 @@ var router = function(app){
   app.get('/dashboard/logs', dashboardController.showLogs);
   app.get('/dashboard/settings', dashboardController.showSettings);
 
-  // Verify
+  // Email
   app.get('/verify/:token', emailController.verifyToken);
+
+  // API
+  app.get('/api/place_id', apiController.getPlaceID);
 };
 
 module.exports = router;
