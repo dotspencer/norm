@@ -41,7 +41,7 @@ var router = function(app){
   app.get('/verify/:token', emailController.verifyToken);
 
   // API
-  app.get('/api/place_id', apiController.getPlaceID);
+  app.get('/api/user_info', apiController.getUserInfo);
 };
 
 module.exports = router;
