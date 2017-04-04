@@ -12,14 +12,13 @@ div.side {
   left: 0;
   bottom: 0; }
   div.side .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     padding: 20px 0;
     background-color: mediumseagreen;
     background-color: indianred;
     background-color: #F77A52;
-    font-family: 'Ubuntu Condensed', sans-serif;
     color: white;
-    font-weight: 400;
+    font-weight: 200;
     letter-spacing: 2px;
     text-align: center; }
   div.side a {
@@ -101,7 +100,7 @@ div.content {
       font-family: inherit;
       font-weight: 300;
       padding: 10px;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       border: none;
       border-bottom: 1px solid lightgray; }
       div.content input[type='tel']::placeholder {
