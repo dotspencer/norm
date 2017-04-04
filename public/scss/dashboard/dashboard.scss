@@ -25,7 +25,7 @@ div.side {
     padding: 20px 0;
     background-color: mediumseagreen;
     background-color: indianred;
-    background-color: tomato;
+    background-color: #F77A52;
     font-family: 'Ubuntu Condensed', sans-serif;
     // background: linear-gradient(crimson, #ff6850);
     color: $font-color;
@@ -154,6 +154,7 @@ div.content{
     &[type='text'] {
       font-size: 1rem;
       padding: 5px;
+      width: 300px;
     }
   }
 
